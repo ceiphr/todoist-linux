@@ -12,6 +12,7 @@ const url = require('url');
 
 const {ShortcutConfig} = require('./shortcutConfig');
 const shortcuts = require('./shortcuts');
+const configInstance = new ShortcutConfig();
 
 let win = {};
 let gOauthWindow = undefined;
@@ -19,9 +20,7 @@ let tray = null;
 let contextMenu;
 let config = {};
 
-function createTray(win) {
-  const configInstance = new ShortcutConfig();
-
+function createTray() {
   // if tray-icon is set to null in config file then don't create a tray icon
   if (!config['tray-icon']) {
     return;
@@ -169,7 +168,6 @@ function createWindow () {
     icon: path.join(__dirname, 'icons/icon.png')
   });
 
-
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, (config['beta'] ? 'beta.html' : 'index.html')),
@@ -177,7 +175,6 @@ function createWindow () {
     slashes: true
   }));
 
-  createTray(win);
   shortcutsInstance = new shortcuts(win, app);
   shortcutsInstance.registerAllShortcuts();
 
@@ -270,4 +267,31 @@ if (!gotTheLock) {
   });
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+  if(process.argv[2] == "-h" || process.argv[2] == "--help") {
+    console.log("Usage:");
+    console.log("\ttodoist preferences");
+    // console.log("\ttodoist (-t | --tray)");
+    console.log("\ttodoist (-h | --help)");
+  } else if(process.argv[2] == "preferences"){
+    shell.openItem(path.join(
+      configInstance.getConfigDirectory(),
+      '.todoist-linux.json'
+    ));
+  } 
+  // TODO Fix auto-hide issue
+  // else if(process.argv[2] == "-t" || process.argv[2] == "--tray"){
+  //   createWindow();
+  //   createTray();
+  //   win.hide();
+  // } 
+  else if(!process.argv[2]) {
+    createWindow();
+    createTray();
+  } else {
+    console.log("Usage:");
+    console.log("\ttodoist preferences");
+    // console.log("\ttodoist (-t | --tray)");
+    console.log("\ttodoist (-h | --help)");
+  }
+});
