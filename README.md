@@ -14,11 +14,9 @@ This app works with both Windows and Linux.
 
 </h5>
 
-## Project is Archived
+## This is a fork
 
-I don't have time to support it anymore plus Todoist guys released an official Linux App. Feel free to fork the repo or contact me for any questions.
-
-**Thanks to all the contributors who helped me to support this app. Love you!**
+The original creator @KryDos has archived https://github.com/KryDos/todoist-linux. I was one of the active contributors for the project. I fully intend to continue working on it in my fork.
 
 ## Link to Official Linux app
 
