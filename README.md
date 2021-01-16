@@ -16,7 +16,7 @@ This app works with both Windows and Linux.
 
 ## This is a fork
 
-The original creator @KryDos has archived https://github.com/KryDos/todoist-linux. I was one of the active contributors for the project. I fully intend to continue working on it in my fork.
+The original creator [@KryDos](https://github.com/KryDos) has archived https://github.com/KryDos/todoist-linux. [I was one of the active contributors for the project](https://github.com/KryDos/todoist-linux/graphs/contributors). I fully intend to continue working on it in my fork.
 
 ## Link to Official Linux app
 
