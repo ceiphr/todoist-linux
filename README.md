@@ -14,10 +14,6 @@ This app works with both Windows and Linux.
 
 </h5>
 
-## This is a fork
-
-The original creator [@KryDos](https://github.com/KryDos) has archived https://github.com/KryDos/todoist-linux. [I was one of the active contributors for the project](https://github.com/KryDos/todoist-linux/graphs/contributors). I fully intend to continue working on it in my fork.
-
 ## Link to Official Linux app
 
 Doist recently released the official app as a snap package. [Visit this page to install the Official Todoist app](https://snapcraft.io/todoist).
